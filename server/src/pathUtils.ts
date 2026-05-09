@@ -65,9 +65,9 @@ export function resolveIncludeUri(
 
     for (const dir of directoriesToSearch) {
         const fullPath = path.join(dir, includeFile);
-        const uri = URI.parse(fullPath).toString();
+        const uri = URI.file(fullPath).toString();
         if (symbolTables.has(uri)) {
-            return uri
+            return uri;
         }
     }
 
